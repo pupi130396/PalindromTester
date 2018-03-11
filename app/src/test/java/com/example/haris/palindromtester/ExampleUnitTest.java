@@ -1,5 +1,6 @@
 package com.example.haris.palindromtester;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -10,8 +11,23 @@ import static org.junit.Assert.*;
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
 public class ExampleUnitTest {
-    @Test
-    public void addition_isCorrect() throws Exception {
-        assertEquals(4, 2 + 2);
+    private PalindromTester palindromTester;
+
+    @Before
+    public void setUp(){
+        palindromTester = new PalindromTester();
     }
+
+    @Test
+    public void True() throws Exception {
+
+        assertEquals(true, PalindromTester.isPalindrome("Lagerregal"));
+    }
+
+    @Test
+    public void False(){
+        assertEquals(false, PalindromTester.isPalindrome("Apfelbaum"));
+    }
+
+
 }
